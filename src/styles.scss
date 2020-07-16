@@ -1,1 +1,92 @@
 /* You can add global styles to this file, and also import other style files */
+
+$TQ-primary-li-color: #30404d;
+$TQ-primary-content-color: #292d34;
+$TQ-blue: #167ed1;
+
+// overide primeng style
+.TQ-tabview.ui-tabview {
+  padding: 0;
+}
+
+.TQ-tabview.ui-tabview.ui-tabview-top .ui-tabview-nav {
+  display: grid;
+  grid-template-columns: 10px;
+  grid-auto-flow: column;
+  justify-content: flex-start;
+  overflow: hidden;
+  background-color: $TQ-primary-li-color;
+}
+
+.TQ-tabview.ui-tabview.ui-tabview-top .ui-tabview-nav li {
+  background-color: transparent;
+  border-radius: 0px;
+  border: 1px solid #000;
+  height: 28px;
+  line-height: 28px;
+  margin-right: 5px;
+  background-color: $TQ-primary-li-color;
+  border: none;
+  border-top: 1px solid transparent;
+  text-align: center;
+  outline: none;
+
+  a {
+    color: #fff;
+    padding: 0 1em;
+  }
+}
+
+.TQ-tabview.ui-tabview.ui-tabview-top
+  .ui-tabview-nav
+  li:not(.ui-state-active):not(.ui-state-disabled) {
+  border: 1px solid transparent;
+}
+
+.TQ-tabview.ui-tabview.ui-tabview-top
+  .ui-tabview-nav
+  li:not(.ui-state-active):not(.ui-state-disabled):hover {
+  background-color: $TQ-primary-content-color;
+  border: 1px solid transparent;
+  border-top: 1px solid $TQ-blue;
+
+  a {
+    color: #fff;
+  }
+
+  span.ui-tabview-close {
+    color: #fff;
+  }
+}
+
+.TQ-tabview.ui-tabview.ui-tabview-top .ui-tabview-nav li.ui-state-active {
+  background-color: $TQ-primary-content-color;
+  border: 1px solid transparent;
+  border-top: 1px solid $TQ-blue;
+
+  &:hover {
+    background-color: #292d34;
+    border: 1px solid transparent;
+    border-top: 1px solid $TQ-blue;
+  }
+
+  &:active {
+    border: 1px solid transparent;
+  }
+}
+
+.TQ-tabview.ui-tabview .ui-tabview-panels .ui-tabview-panel {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+// editor toolbar tabview
+.TQ-editor-toolbar.TQ-tabview.ui-tabview .ui-tabview-panels {
+  padding: 0;
+}
+
+.TQ-tabview.ui-tabview .ui-tabview-panels .ui-tabview-panel {
+  width: 100%;
+  height: 100%;
+}

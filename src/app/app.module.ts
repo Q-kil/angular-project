@@ -3,14 +3,23 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { EditComponent } from './edit/edit.component';
+import {TabViewModule} from 'primeng/tabview';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {OrderListModule} from 'primeng/orderlist';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    OrderListModule,
+    TabViewModule
   ],
   providers: [],
   bootstrap: [AppComponent]
