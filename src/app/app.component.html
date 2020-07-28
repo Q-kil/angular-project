@@ -1,5 +1,12 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
+  <ng-container *ngIf="showStatus; else template">container</ng-container>
+  <ng-template #template>template</ng-template>
+  <hr>
+  <hr>
+  <div *ngIf="divShowStatus; else template_">container</div>
+  <div #template_>template</div>
+  <hr>
   <h1>
     Welcome to {{ title }}!
   </h1>
