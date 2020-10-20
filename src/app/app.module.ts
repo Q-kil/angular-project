@@ -3,6 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import {ButtonModule} from 'primeng/button';
+// import {DropdownModule} from 'primeng/dropdown';
+
+// import { FormsModule } from '@angular/forms';
+
+// import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -10,7 +16,11 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ButtonModule
+    // DropdownModule,
+    // FormsModule,
+    // BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
