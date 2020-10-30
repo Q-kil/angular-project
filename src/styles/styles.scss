@@ -1,0 +1,338 @@
+/* You can add global styles to this file, and also import other style files */
+html,
+body {
+  margin: 0;
+  padding: 0;
+
+  width: 100%;
+  height: 100%;
+  font-size: 1em; // 16px
+  font-family: Tahoma, Arial, Helvetica, "Microsoft YaHei New", "Microsoft Yahei", "微软雅黑", 宋体,
+    SimSun, STXihei, "华文细黑", sans-serif;
+}
+
+// 启动页 Loading 效果
+.app-loading {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.app-loading .spinner {
+  height: 200px;
+  width: 200px;
+  animation: rotate 2s linear infinite;
+  transform-origin: center center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.app-loading .spinner .path {
+  stroke-dasharray: 1, 200;
+  stroke-dashoffset: 0;
+  animation: dash 1.5s ease-in-out infinite;
+  stroke-linecap: round;
+  stroke: #ddd;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35px;
+  }
+
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -124px;
+  }
+}
+
+// Convert to REM function
+@function px2rem($px) {
+  $rem: 16px;
+  @return ($px / $rem) + rem;
+}
+
+// Font Size
+$TQ-Large-Icon: px2rem(30px);
+$TQ-H1: px2rem(20px);
+$TQ-H2: px2rem(16px);
+$TQ-H3: px2rem(14px);
+$TQ-H4: px2rem(12px);
+$TQ-H5: px2rem(10px);
+$TQ-P: px2rem(12px);
+
+// Global Colors
+$TQ-primary-bg-color: #30343d;
+$TQ-primary-li-color: #30404d;
+$TQ-primary-content-color: #292d34;
+$TQ-primary-btn-bg-color: #293038;
+$TQ-primary-btn-active-color: #202934;
+$TQ-primary-disabled-color: #394b59;
+$TQ-primary-disabled-text-color: rgba(92, 112, 128, 0.8);
+$TQ-danger: #c23030;
+$TQ-warning: #bf7326;
+$TQ-dark: #000000;
+$TQ-white: whitesmoke;
+$TQ-white-50: rgba(255, 255, 255, 0.5);
+$TQ-white-20: rgba(255, 255, 255, 0.5);
+$TQ-blue: #167ed1;
+$TQ-green: green;
+$TQ-text-white: rgba(255, 255, 255, 1);
+$TQ-text-white-50: rgba(255, 255, 255, 0.5);
+
+$TQ-app-header-height: 26px;
+$TQ-app-footer-height: 26px;
+$TQ-aside-width: 90px;
+$TQ-button-active: #6c8cad;
+
+@mixin hover-element {
+  border-color: $TQ-dark;
+  // background-color: $stateHoverBgColor;
+  background: rgb(51, 58, 65);
+  background: -moz-linear-gradient(90deg, rgb(51, 58, 65) 51%, rgb(39, 46, 53) 100%);
+  background: -webkit-linear-gradient(90deg, rgb(51, 58, 65) 51%, rgb(39, 46, 53) 100%);
+  background: -o-linear-gradient(90deg, rgb(51, 58, 65) 51%, rgb(39, 46, 53) 100%);
+  background: -ms-linear-gradient(90deg, rgb(51, 58, 65) 51%, rgb(39, 46, 53) 100%);
+  background: linear-gradient(180deg, rgb(51, 58, 65) 51%, rgb(39, 46, 53) 100%);
+}
+
+.TQ-btn {
+  cursor: pointer;
+  height: px2rem(34px);
+  padding: 0 px2rem(20px);
+  border: 1px solid $TQ-dark;
+  border-radius: px2rem(3px);
+  outline: none;
+
+  color: #ffffff;
+  background-color: $TQ-primary-btn-bg-color;
+}
+
+.TQ-btn:focus,
+.TQ-btn:enabled:hover {
+  @include hover-element();
+}
+
+.TQ-btn:enabled:active {
+  outline: none;
+  background-color: $TQ-primary-btn-active-color;
+}
+
+.TQ-btn:disabled {
+  cursor: not-allowed;
+  border: 1px solid transparent;
+  color: $TQ-primary-disabled-text-color;
+  background-color: $TQ-primary-disabled-color;
+}
+
+.TQ-text-help {
+  font-size: $TQ-H4;
+}
+
+.TQ-text-danger {
+  color: $TQ-danger;
+}
+
+.TQ-text-warning {
+  color: $TQ-warning;
+}
+
+// overide primeng style
+.TQ-tabview.ui-tabview {
+  padding: 0;
+}
+
+.TQ-tabview.ui-tabview.ui-tabview-top .ui-tabview-nav {
+  display: grid;
+  grid-template-columns: 10px;
+  grid-auto-flow: column;
+  justify-content: flex-start;
+  overflow: hidden;
+  background-color: $TQ-primary-li-color;
+}
+
+.TQ-tabview.ui-tabview.ui-tabview-top .ui-tabview-nav li {
+  background-color: transparent;
+  border-radius: 0px;
+  border: 1px solid #000;
+  height: 28px;
+  line-height: 28px;
+  margin-right: 5px;
+  background-color: $TQ-primary-li-color;
+  border: none;
+  border-top: 1px solid transparent;
+  text-align: center;
+  outline: none;
+
+  a {
+    color: #fff;
+    padding: 0 1em;
+  }
+}
+
+.TQ-tabview.ui-tabview.ui-tabview-top
+  .ui-tabview-nav
+  li:not(.ui-state-active):not(.ui-state-disabled) {
+  border: 1px solid transparent;
+}
+
+.TQ-tabview.ui-tabview.ui-tabview-top
+  .ui-tabview-nav
+  li:not(.ui-state-active):not(.ui-state-disabled):hover {
+  background-color: $TQ-primary-content-color;
+  border: 1px solid transparent;
+  border-top: 1px solid $TQ-blue;
+
+  a {
+    color: #fff;
+  }
+
+  span.ui-tabview-close {
+    color: #fff;
+  }
+}
+
+.TQ-tabview.ui-tabview.ui-tabview-top .ui-tabview-nav li.ui-state-active {
+  background-color: $TQ-primary-content-color;
+  border: 1px solid transparent;
+  border-top: 1px solid $TQ-blue;
+
+  &:hover {
+    background-color: #292d34;
+    border: 1px solid transparent;
+    border-top: 1px solid $TQ-blue;
+  }
+
+  &:active {
+    border: 1px solid transparent;
+  }
+}
+
+.TQ-tabview.ui-tabview .ui-tabview-panels .ui-tabview-panel {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+// editor toolbar tabview
+.TQ-editor-toolbar.TQ-tabview.ui-tabview .ui-tabview-panels {
+  padding: 0;
+}
+
+.TQ-tabview.ui-tabview .ui-tabview-panels .ui-tabview-panel {
+  width: 100%;
+  height: 100%;
+}
+
+// overide primeng dialog
+.TQ-dialog.ui-dialog .ui-dialog-content {
+  padding: px2rem(30px) px2rem(15px);
+}
+
+// override primeng dropdown
+.ui-dropdown {
+  min-width: 1em;
+}
+
+.TQ-dropdown {
+  .ui-dropdown {
+    border: 1px solid $TQ-dark;
+    min-width: 0;
+  }
+
+  .ui-inputtext {
+    background: $TQ-primary-content-color;
+    border: 1px solid $TQ-dark;
+    color: $TQ-white;
+  }
+}
+
+.TQ-input-text.ui-inputgroup {
+  .ui-inputtext {
+    height: 28px;
+  }
+
+  .ui-inputgroup-addon {
+    height: 28px;
+    line-height: 28px;
+    padding: 0;
+  }
+}
+
+.object-fit_fill {
+  object-fit: fill;
+}
+
+.object-fit_contain {
+  object-fit: contain;
+}
+
+.object-fit_cover {
+  object-fit: cover;
+}
+
+.object-fit_none {
+  object-fit: none;
+}
+
+.object-fit_scale-down {
+  object-fit: scale-down;
+}
+
+.ui-table .ui-table-tbody > tr > td.ui-editing-cell p-celleditor > input[type="checkbox"] {
+  width: auto;
+  height: auto;
+}
+
+.tq-btn {
+  display: block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid $TQ-primary-btn-active-color;
+  color: $TQ-white;
+  border-radius: 3px;
+  background-color: transparent;
+
+  &:hover {
+    background-color: $TQ-primary-btn-active-color !important;
+    border: 1px solid $TQ-primary-btn-active-color !important;
+    color: $TQ-button-active;
+  }
+
+  &.primary {
+    background-color: $TQ-primary-btn-active-color;
+  }
+}
+
+body .ui-paginator {
+  border: none !important;
+  background: #292d34 !important;
+}
+
+body .ui-paginator .ui-paginator-pages .ui-paginator-page.ui-state-active {
+  background-color: #292d34 !important;
+}
+
+body .ui-paginator .ui-paginator-pages .ui-paginator-page:focus {
+  box-shadow: none !important;
+}

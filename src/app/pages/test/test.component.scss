@@ -1,0 +1,69 @@
+// @import "styles/styles.scss";
+@import 'src/styles/styles.scss';
+
+p {
+  // font-size: 1em;
+  padding: px2rem(60px);
+}
+
+.login-container__form__input {
+  width: px2rem(300px);
+  margin: 0 auto;
+  margin-bottom: px2rem(20px);
+
+  p {
+    height: px2rem(12px);
+    margin-top: px2rem(5px);
+  }
+}
+
+.ui-float-label {
+  font-size: 0.875rem;
+
+  input {
+    width: px2rem(300px);
+    height: px2rem(36px);
+    border: 1px solid #000000;
+    border-radius: 3px;
+    padding: 0 0.5em;
+  }
+
+  label {
+    left: 0.5em;
+  }
+}
+
+
+
+
+
+
+#header {
+  width: 100%;
+  height: $TQ-app-header-height;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  background-color: $TQ-primary-btn-active-color;
+
+  .header__user-profile {
+    cursor: pointer;
+    float: right;
+    display: flex;
+    align-items: center;
+
+    &__name {
+      display: inline-block;
+      color: $TQ-white;
+    }
+
+    &__triangle {
+      display: inline-block;
+      color: $TQ-white;
+    }
+
+    &__menu {
+      position: absolute;
+    }
+  }
+}
