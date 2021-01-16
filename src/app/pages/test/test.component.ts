@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { BehaviorSubject } from 'rxjs';
 import { localDB } from 'src/app/shared/util/storage';
+import { delay, take } from "rxjs/operators";
 
 @Component({
   selector: 'app-test',
@@ -12,6 +14,15 @@ export class TestComponent implements OnInit {
   isSubmitting = false;
 
   menus = [];
+
+  cities = [{name: 'New York', code: 'NY'},
+  {name: 'Rome', code: 'RM'},
+  {name: 'London', code: 'LDN'},
+  {name: 'Istanbul', code: 'IST'},
+  {name: 'Paris', code: 'PRS'}];
+
+  private tempMsg$: BehaviorSubject<string> = new BehaviorSubject<string>(null);
+  tempMsgObserver = this.tempMsg$.asObservable();
 
   constructor(
     private fb: FormBuilder
@@ -30,6 +41,10 @@ export class TestComponent implements OnInit {
     // localDB.remove('test');
     // localDB.remove('test');
     localDB.clear();
+
+    this.tempMsgObserver.subscribe(mes => {
+      console.log('observer', mes);
+    })
   }
 
   submitForm() {
@@ -41,6 +56,16 @@ export class TestComponent implements OnInit {
 
   signin(account: string) {
     console.log('}{', { account });
+  }
+
+  addTemp(message: string) {
+    this.tempMsg$.next(message);
+    // this.tempMsg$.pipe(delay(200), take(null));
+  }
+
+  mes() {
+    this.addTemp('正在自动保存...');
+    this.addTemp('');
   }
 
 }

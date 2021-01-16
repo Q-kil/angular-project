@@ -24,7 +24,7 @@
   </fieldset>
 </form> -->
 
-<p-button label="Submit"></p-button>
+<p-button label="Submit" (click)="mes()"></p-button>
 
 <header id="header">
   <div class="header__user-profile" (click)="op.toggle($event)">
@@ -44,3 +44,5 @@
     sdsds
   </p-overlayPanel>
 </header>
+
+<p-listbox [options]="cities" optionLabel="name"></p-listbox>
