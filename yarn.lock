@@ -624,6 +624,13 @@ amdefine@>=0.0.4:
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
   integrity sha1-SlKCrBZHKek2Gbz9OtFR+BfOkfU=
 
+angular-cropperjs@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.npm.taobao.org/angular-cropperjs/download/angular-cropperjs-1.0.2.tgz#c5a69cae5946e7ce7deedfdf593c90d905f53dd2"
+  integrity sha1-xaacrllG58597t/fWTyQ2QX1PdI=
+  dependencies:
+    tslib "^1.9.0"
+
 ansi-colors@^3.0.0:
   version "3.2.4"
   resolved "https://registry.yarnpkg.com/ansi-colors/-/ansi-colors-3.2.4.tgz#e3a3da4bfbae6c86a9c285625de124a234026fbf"
@@ -1880,6 +1887,11 @@ create-hmac@^1.1.0, create-hmac@^1.1.4, create-hmac@^1.1.7:
     ripemd160 "^2.0.0"
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
+
+cropperjs@^2.0.0-alpha.1:
+  version "2.0.0-alpha.1"
+  resolved "https://registry.npm.taobao.org/cropperjs/download/cropperjs-2.0.0-alpha.1.tgz#5f28975cc73d3a009a0d180ab3ec5199d81433d9"
+  integrity sha1-XyiXXMc9OgCaDRgKs+xRmdgUM9k=
 
 cross-spawn@^3.0.0:
   version "3.0.1"
