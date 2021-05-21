@@ -1,0 +1,11 @@
+{
+  "/cdn": {
+    "target": "https://a.tooqing.com/game/resource",
+    "logLevel": "debug",
+    "secure": false,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/cdn/": "/"
+    }
+  }
+}
