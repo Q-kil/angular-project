@@ -39,6 +39,7 @@ use to proxy
 lazy modules
 
 ### learn
+ng doc
 
 ## Development server
 
