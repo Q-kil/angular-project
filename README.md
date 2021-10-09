@@ -15,7 +15,7 @@ use to ng-template and ng-container
 ### iterator
 ng iterator
 
-### from
+### form
 how to use angular form
 
 ### data_removal
