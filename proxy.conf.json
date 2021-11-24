@@ -1,0 +1,10 @@
+{
+  "/api": {
+    "target": "https://api-dev.tooqing.com",
+    "secure": true,
+    "pathRewrite": {
+      "^/api": ""
+    },
+    "changeOrigin": true
+  }
+}

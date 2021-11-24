@@ -1,3 +1,45 @@
+<router-outlet></router-outlet>
+
+<div>
+  <div class="container" [ngSwitch]="switch">
+    <div *ngSwitchCase="1">1</div>
+    <div *ngSwitchCase="2">2</div>
+  </div>
+</div>
+
+<div class="form-container">
+  <form [formGroup]="loginForm" (ngSubmit)="submitForm()">
+    <div class="input-common">
+      <label for="account">账号：</label>
+      <input type="text" formControlName="account">
+    </div>
+    <div class="input-common">
+      <label for="password">密码：</label>
+      <input type="text" formControlName="password">
+    </div>
+    <button type="submit" [disabled]="!loginForm.valid">登录</button>
+  </form>
+</div>
+
+<app-child [old]="old" (sex)="chileSex($event)"></app-child>
+<button (click)="change()">child parame change</button>
+
+<a routerLink="home">to home</a>
+<a routerLink="home/id/111">to home</a>
+<div>
+  <button (click)="toHome()">to home</button>
+</div>
+
+<div class="games">
+  <!-- <div class="game" *ngFor="let game of games$ | async">1 {{game._id}}</div> -->
+  <!-- <div class="game" *ngFor="let game of getAvatars() | async">1 {{game._id}}</div> -->
+  <div>{{ games$ }}</div>
+  <div>{{ getAvatars() }}</div>
+  <div>{{ test() }}</div>
+</div>
+
+
+
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
   <h1>
@@ -18,4 +60,4 @@
   </li>
 </ul>
 
-<router-outlet></router-outlet>
+
