@@ -15,3 +15,4 @@ export class HeroJobAdComponent implements AdComponent {
   @Input() data: any;
 
 }
+

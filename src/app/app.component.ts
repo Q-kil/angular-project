@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AdItem } from './directives/ad-item';
-import { AdService } from './directives/ad.services';
+import { AdItem } from './ad-item';
+import { AdService } from './ad.services';
 
 @Component({
   selector: 'app-root',
